@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 52px 0;
+	padding: 52px 0 39px 0;
 	font-size: 15px;
 	letter-spacing: 0.02em;
 }
@@ -37,6 +37,16 @@
 	top: 0px;
 	width: 27px;
 	height: 27px;
+}
+.contacts__phone:hover::before {
+	content: '';
+	background-image: url(../img/phone_icon_active.svg);
+	position: absolute;
+	left: -30px;
+	top: 0px;
+	width: 27px;
+	height: 27px;
+	transition: all 0.2s ease-in-out;
 }
 .cart {
 	display: flex;

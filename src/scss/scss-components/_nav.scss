@@ -1,0 +1,49 @@
+.nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 52px 0;
+	font-size: 15px;
+	letter-spacing: 0.02em;
+}
+.logo {
+	margin-right: 10px;
+}
+.nav__list {
+	display: flex;
+	gap: 45px;
+}
+.nav__link:hover {
+	color: $accent-color;
+	font-weight: 700;
+	transition: all 0.2s ease-in-out;
+}
+.contacts {
+	position: relative;
+	display: flex;
+	align-items: center;
+	margin-left: 63px;
+}
+
+.contacts__phone:hover {
+	color: $accent-color;
+	transition: all 0.2s ease-in-out;
+}
+.contacts__phone::before {
+	content: '';
+	background-image: url(../img/phone_icon.svg);
+	position: absolute;
+	left: -30px;
+	top: 0px;
+	width: 27px;
+	height: 27px;
+}
+.cart {
+	display: flex;
+	align-items: center;
+	margin-left: 68px;
+	cursor: pointer;
+}
+.burger {
+	display: none;
+}

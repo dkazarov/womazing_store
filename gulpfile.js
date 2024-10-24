@@ -67,6 +67,7 @@ function html() {
 					basepath: '@file',
 				}),
 			)
+			.pipe(webpHTML())
 			.pipe(htmlmin({ collapseWhitespace: true }))
 			.pipe(
 				size({
@@ -156,7 +157,6 @@ function img() {
 				progressive: true,
 			}),
 		)
-		.pipe(webpHTML())
 		.pipe(
 			size({
 				showFiles: true,
@@ -174,9 +174,7 @@ function watch() {
 	});
 	gulp.watch(paths.html.dest).on('change', browsersync.reload);
 	gulp.watch(paths.html.src, html);
-	gulp
-		.watch(['src/html-components/*.html', 'src/*html'], html)
-		.on('all', browsersync.reload);
+	gulp.watch(['src/html-components/*.html', 'src/*html'], html).on('all', browsersync.reload);
 	gulp.watch(paths.styles.src, styles);
 	gulp.watch(paths.scripts.src, scripts);
 	gulp.watch(paths.images.src, img);

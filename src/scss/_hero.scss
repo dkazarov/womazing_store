@@ -12,6 +12,7 @@
 	padding-top: 150px;
 }
 .hero__title {
+	letter-spacing: 0.021em;
 	font-weight: 500;
 	font-size: 55px;
 	line-height: 110%;
@@ -25,14 +26,14 @@
 	line-height: 140%;
 	text-align: right;
 	max-width: 385px;
-	margin-bottom: 52px;
+	margin-bottom: 53px;
 }
 .hero__link-inner {
 	display: flex;
 	align-items: center;
 	margin-right: auto;
 	margin-bottom: 190px;
-	margin-left: 75px;
+	margin-left: 73px;
 }
 .arrown-down {
 	border: 1px solid transparent;
@@ -49,9 +50,26 @@
 	border: 1px solid transparent;
 }
 .hero__img {
-  margin-top: 4px;
+	position: relative;
+	margin-top: 4px;
 }
 .hero__img-person {
 	width: 410px;
 	height: 646px;
+}
+
+.hero__img-person.hero__img-person--slide-top {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 122px;
+	right: -106px;
+}
+
+.hero__img-person.hero__img-person--slide-bottom {
+	position: absolute;
+	width: 190px;
+	height: 315px;
+	bottom: 4px;
+	left: -130px;
 }

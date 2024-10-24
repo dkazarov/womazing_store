@@ -34,20 +34,20 @@
 	margin-right: auto;
 	margin-bottom: 190px;
 	margin-left: 73px;
-}
-.arrown-down {
 	border: 1px solid transparent;
 }
-.arrown-down:hover {
-	cursor: pointer;
-	border: 1px solid $accent-color;
+.hero__link-inner:hover {
+	border: 1px solid $action-color;
 }
 .hero__link {
 	padding: 22px 50px;
 	text-align: center;
 	background-color: $accent-color;
 	color: #fff;
-	border: 1px solid transparent;
+}
+.hero__link:hover {
+	transition: all 0.2s ease-in-out;
+	background-color: $action-color;
 }
 .hero__img {
 	position: relative;

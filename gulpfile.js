@@ -147,22 +147,36 @@ function scripts() {
 }
 
 // Сжатие изображений
-function img() {
+const img = () => {
 	return gulp
 		.src(paths.images.src)
 		.pipe(newer(paths.images.dest))
 		.pipe(webp())
+		.pipe(newer(paths.images.dest))
+		.pipe(gulp.src(paths.images.src))
+		.pipe(newer(paths.images.dest))
 		.pipe(
-			imagemin({
-				progressive: true,
-			}),
+			imagemin(
+				{
+					verbose: true,
+				},
+				[
+					imagemin.gifsicle({ interlaced: true }),
+					imagemin.mozjpeg({ quality: 75, progressive: true }),
+					imagemin.optipng({ optimizationLevel: 3 }),
+					imagemin.svgo({
+						plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+					}),
+				],
+			),
 		)
 		.pipe(
 			size({
 				showFiles: true,
 			}),
 		)
-		.pipe(gulp.dest(paths.images.dest));
+		.pipe(gulp.dest(paths.images.dest))
+		.pipe(browsersync.stream());
 }
 
 // Отслеживание изменений в файлах и запуск лайв сервера
